@@ -1,0 +1,57 @@
+@use '../../../base' as base;
+
+.card {
+  display: flex;
+  width: 70%;
+  margin: 20px auto;
+  justify-content: space-between;
+  padding: 20px;
+  &:nth-child(2n+1) {
+    background: black;
+  }
+
+  &__photo, &__text {
+    width: 50%;
+  }
+}
+
+.odd {
+  .card {
+  
+  &__photo {
+    order: 1;
+  }
+
+  &__text {
+    order: 2
+  }
+  }
+
+  &:nth-child(2n+1) {
+    background: base.$yellow;
+  }
+
+  &:nth-child(2n) {
+    background: base.$magenta;
+  }
+}
+
+.even {
+  .card{
+  
+  &__photo {
+    order: 2;
+  }
+
+  &__text {
+    order: 1;
+  }}
+
+  &:nth-child(2n+1) {
+    background: base.$magenta;
+  }
+
+  &:nth-child(2n) {
+    background: base.$yellow;
+  }
+}
