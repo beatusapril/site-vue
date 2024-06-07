@@ -9,6 +9,9 @@
   &:nth-child(2n+1) {
     background: black;
   }
+  &__photo {
+    object-fit: contain;
+  }
 
   &__photo, &__text {
     width: 50%;
