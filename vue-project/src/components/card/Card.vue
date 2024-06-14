@@ -1,30 +1,24 @@
 <script setup>
 import classes from './card.module.scss';
 import { img } from '../../api/API';
-import { post } from '../../store/types'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
+import { Post } from '../../store/types'
 
 const props = defineProps({
   index: Number,
-  post: { ...post }
+  post: { ...Post }
 });
-
-function onRedirect() {
-  router.push(`/news/${props.post.id}`)
-}
 
 </script>
 
 <template>
-  <div @dblclick="onRedirect" :class="[classes.card, props.index % 2 != 0 ? classes.odd : classes.even]">
+  <div :v_if="props.post.id" :class="[classes.card, props.index % 2 != 0 ? classes.even : classes.odd]">
     <div :class="[classes.card__photo, classes.card__block]">
       <img :src="img(props.post.imgUrl)"></img>
     </div>
     <div :class="[classes.card__text, classes.card__block]">
-      {{ props.post && props.post.title }}
-      {{ props.post && props.post.text }}
+      {{ props.post.title }}
+      {{ props.post.text }}
+      <RouterLink :to="{ name: 'newsPage', params: { id: 1 } }">More...</RouterLink>
     </div>
   </div>
 </template>

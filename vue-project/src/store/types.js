@@ -1,4 +1,4 @@
-export const post = {
+export const Post = {
     id: Number,
     title: String,
     text: String,

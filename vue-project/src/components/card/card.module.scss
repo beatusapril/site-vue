@@ -6,55 +6,46 @@
   margin: 20px auto;
   justify-content: space-between;
   padding: 20px;
-  &:nth-child(2n+1) {
-    background: black;
-  }
+
   &__photo {
     object-fit: contain;
   }
 
-  &__photo, &__text {
+  &__photo,
+  &__text {
+    padding: 20px;
     width: 50%;
   }
 }
 
 .odd {
-  .card {
-  
-  &__photo {
+  .card__photo {
     order: 1;
   }
 
-  &__text {
+  .card__text {
     order: 2
   }
-  }
 
-  &:nth-child(2n+1) {
-    background: base.$yellow;
-  }
-
-  &:nth-child(2n) {
-    background: base.$magenta;
-  }
 }
 
 .even {
-  .card{
-  
-  &__photo {
+
+  .card__photo {
     order: 2;
   }
 
-  &__text {
+  .card__text {
     order: 1;
-  }}
+  }
+}
 
+.card__block {
   &:nth-child(2n+1) {
-    background: base.$magenta;
+    background: base.$green;
   }
 
   &:nth-child(2n) {
-    background: base.$yellow;
+    background: base.$grey;
   }
 }

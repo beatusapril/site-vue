@@ -3,22 +3,26 @@
 
 <template>
   <div class="container">
-  <header class="header">
+    <header class="header">
 
-    <div class="wrapper">
+      <div class="wrapper">
 
-      <nav class="menu">
-        <RouterLink class="link" to="/">Home</RouterLink>
-        <RouterLink class="link" to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+        <nav class="menu">
+          <RouterLink class="link" to="/">Home</RouterLink>
+          <RouterLink class="link" to="/about">About</RouterLink>
+        </nav>
+      </div>
+    </header>
 
-    <RouterView class="view"/>
+    <RouterView class="view" />
   </div>
 </template>
 
 <style global>
+body {
+  background-color: rgb(237, 242, 242);
+}
+
 .container li {
   list-style-type: none;
 }
@@ -29,14 +33,13 @@
 </style>
 
 <style scope>
-
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 10px;
 }
 
-.header{
+.header {
   display: flex;
   justify-content: flex-end;
 }
